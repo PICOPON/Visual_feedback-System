@@ -8,10 +8,12 @@ extern "C"
 #include "KSJApiBase.h"
 }//camera api
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-	QApplication a(argc, argv);
-	Visual_feedback_system w;
-	w.show();
-	return a.exec();
+		QApplication a(argc, argv);
+		Visual_feedback_system w;
+		w.show();
+		return a.exec();
+
 }
+

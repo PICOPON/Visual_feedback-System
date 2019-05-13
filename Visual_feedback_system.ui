@@ -14,30 +14,192 @@
    <string>Visual_feedback_system</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="PortSelectBtn">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>300</y>
+      <x>90</x>
+      <y>90</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>选择相机</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="DeviceNum_Label">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>270</y>
+      <x>310</x>
+      <y>80</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 宋体 Std L</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>相机数</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="ComboBox_DEVICE_LIST">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>90</y>
+      <width>87</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TextBox_CAPTURE_COL_START">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>150</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="colstart">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>150</y>
       <width>72</width>
       <height>15</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>col start</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="colsize">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>230</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>col size</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rolstart">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>150</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>row start</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rowsize">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>230</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>row size</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TextBox_CAPTURE_ROW_START">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>150</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TextBox_CAPTURE_COL_SIZE">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>230</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TextBox_CAPTURE_ROW_SIZE">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>230</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>230</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>tracking</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pic_label">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>310</y>
+      <width>791</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>E:/图片视频/1800-1BG.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="setcapture">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>150</y>
+      <width>161</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>set capture field</string>
     </property>
    </widget>
   </widget>
@@ -67,14 +229,14 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>PortSelectBtn</sender>
    <signal>clicked()</signal>
    <receiver>Visual_feedback_systemClass</receiver>
    <slot>on_AddButton_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>458</x>
-     <y>350</y>
+     <x>138</x>
+     <y>157</y>
     </hint>
     <hint type="destinationlabel">
      <x>572</x>
