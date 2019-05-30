@@ -14,7 +14,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -22,6 +23,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -46,14 +48,24 @@ public:
     QPushButton *setcapture;
     QLabel *cameraCount;
     QLabel *cameraSerial;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *ImageView;
-    QLabel *ImgViewLabel;
     QPushButton *StartBtn;
     QPushButton *StopBtn;
     QLabel *label;
     QLineEdit *timeCounts;
     QPushButton *TimeReset;
+    QPushButton *initTracker;
+    QTextBrowser *textBrowser;
+    QLabel *manipulator_label;
+    QPushButton *preView;
+    QPushButton *StopPreView;
+    QFrame *line;
+    QGroupBox *groupBox;
+    QLabel *ImgViewLabel;
+    QGroupBox *groupBox_2;
+    QLabel *ExposureTime;
+    QLineEdit *ExposureTime_Text;
+    QLabel *KSJ_EXPOSURE_LINES;
+    QLineEdit *KSJ_EXPOSURE_LINES_Text;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -107,46 +119,117 @@ public:
         TextBox_CAPTURE_ROW_SIZE->setGeometry(QRect(460, 139, 113, 21));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(710, 139, 93, 28));
+        pushButton->setGeometry(QRect(900, 520, 93, 28));
         setcapture = new QPushButton(centralWidget);
         setcapture->setObjectName(QStringLiteral("setcapture"));
-        setcapture->setGeometry(QRect(690, 86, 161, 28));
+        setcapture->setGeometry(QRect(890, 190, 161, 28));
         cameraCount = new QLabel(centralWidget);
         cameraCount->setObjectName(QStringLiteral("cameraCount"));
         cameraCount->setGeometry(QRect(760, 30, 111, 31));
         cameraSerial = new QLabel(centralWidget);
         cameraSerial->setObjectName(QStringLiteral("cameraSerial"));
         cameraSerial->setGeometry(QRect(60, 40, 101, 21));
-        horizontalLayoutWidget = new QWidget(centralWidget);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(50, 210, 571, 541));
-        ImageView = new QHBoxLayout(horizontalLayoutWidget);
-        ImageView->setSpacing(6);
-        ImageView->setContentsMargins(11, 11, 11, 11);
-        ImageView->setObjectName(QStringLiteral("ImageView"));
-        ImageView->setContentsMargins(0, 0, 0, 0);
-        ImgViewLabel = new QLabel(horizontalLayoutWidget);
-        ImgViewLabel->setObjectName(QStringLiteral("ImgViewLabel"));
-        ImgViewLabel->setAlignment(Qt::AlignCenter);
-
-        ImageView->addWidget(ImgViewLabel);
-
         StartBtn = new QPushButton(centralWidget);
         StartBtn->setObjectName(QStringLiteral("StartBtn"));
-        StartBtn->setGeometry(QRect(760, 380, 93, 28));
+        StartBtn->setGeometry(QRect(690, 430, 93, 28));
         StopBtn = new QPushButton(centralWidget);
         StopBtn->setObjectName(QStringLiteral("StopBtn"));
-        StopBtn->setGeometry(QRect(760, 510, 93, 28));
+        StopBtn->setGeometry(QRect(830, 430, 93, 28));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(890, 140, 72, 15));
+        label->setGeometry(QRect(910, 250, 72, 15));
         timeCounts = new QLineEdit(centralWidget);
         timeCounts->setObjectName(QStringLiteral("timeCounts"));
-        timeCounts->setGeometry(QRect(980, 140, 71, 21));
+        timeCounts->setGeometry(QRect(990, 250, 71, 21));
         TimeReset = new QPushButton(centralWidget);
         TimeReset->setObjectName(QStringLiteral("TimeReset"));
-        TimeReset->setGeometry(QRect(930, 510, 93, 28));
+        TimeReset->setGeometry(QRect(950, 430, 93, 28));
+        initTracker = new QPushButton(centralWidget);
+        initTracker->setObjectName(QStringLiteral("initTracker"));
+        initTracker->setGeometry(QRect(700, 589, 131, 81));
+        textBrowser = new QTextBrowser(centralWidget);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+        textBrowser->setGeometry(QRect(690, 290, 361, 101));
+        manipulator_label = new QLabel(centralWidget);
+        manipulator_label->setObjectName(QStringLiteral("manipulator_label"));
+        manipulator_label->setGeometry(QRect(690, 250, 171, 31));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(13);
+        font1.setBold(false);
+        font1.setWeight(50);
+        manipulator_label->setFont(font1);
+        manipulator_label->setAlignment(Qt::AlignCenter);
+        preView = new QPushButton(centralWidget);
+        preView->setObjectName(QStringLiteral("preView"));
+        preView->setGeometry(QRect(870, 589, 93, 28));
+        StopPreView = new QPushButton(centralWidget);
+        StopPreView->setObjectName(QStringLiteral("StopPreView"));
+        StopPreView->setGeometry(QRect(870, 659, 101, 28));
+        line = new QFrame(centralWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(20, 230, 1051, 16));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+        groupBox = new QGroupBox(centralWidget);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(20, 0, 1051, 231));
+        ImgViewLabel = new QLabel(centralWidget);
+        ImgViewLabel->setObjectName(QStringLiteral("ImgViewLabel"));
+        ImgViewLabel->setGeometry(QRect(90, 290, 481, 431));
+        ImgViewLabel->setFrameShape(QFrame::Box);
+        ImgViewLabel->setAlignment(Qt::AlignCenter);
+        groupBox_2 = new QGroupBox(centralWidget);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setGeometry(QRect(20, 240, 1051, 501));
+        ExposureTime = new QLabel(centralWidget);
+        ExposureTime->setObjectName(QStringLiteral("ExposureTime"));
+        ExposureTime->setGeometry(QRect(640, 90, 111, 21));
+        ExposureTime->setFrameShape(QFrame::NoFrame);
+        ExposureTime->setAlignment(Qt::AlignCenter);
+        ExposureTime_Text = new QLineEdit(centralWidget);
+        ExposureTime_Text->setObjectName(QStringLiteral("ExposureTime_Text"));
+        ExposureTime_Text->setGeometry(QRect(770, 90, 113, 21));
+        KSJ_EXPOSURE_LINES = new QLabel(centralWidget);
+        KSJ_EXPOSURE_LINES->setObjectName(QStringLiteral("KSJ_EXPOSURE_LINES"));
+        KSJ_EXPOSURE_LINES->setGeometry(QRect(610, 140, 151, 20));
+        KSJ_EXPOSURE_LINES_Text = new QLineEdit(centralWidget);
+        KSJ_EXPOSURE_LINES_Text->setObjectName(QStringLiteral("KSJ_EXPOSURE_LINES_Text"));
+        KSJ_EXPOSURE_LINES_Text->setGeometry(QRect(770, 140, 113, 21));
         Visual_feedback_systemClass->setCentralWidget(centralWidget);
+        groupBox_2->raise();
+        groupBox->raise();
+        PortSelectBtn->raise();
+        DeviceNum_Label->raise();
+        ComboBox_DEVICE_LIST->raise();
+        TextBox_CAPTURE_COL_START->raise();
+        colstart->raise();
+        colsize->raise();
+        rolstart->raise();
+        rowsize->raise();
+        TextBox_CAPTURE_ROW_START->raise();
+        TextBox_CAPTURE_COL_SIZE->raise();
+        TextBox_CAPTURE_ROW_SIZE->raise();
+        pushButton->raise();
+        setcapture->raise();
+        cameraCount->raise();
+        cameraSerial->raise();
+        StartBtn->raise();
+        StopBtn->raise();
+        label->raise();
+        timeCounts->raise();
+        TimeReset->raise();
+        initTracker->raise();
+        textBrowser->raise();
+        manipulator_label->raise();
+        preView->raise();
+        StopPreView->raise();
+        line->raise();
+        ImgViewLabel->raise();
+        ExposureTime->raise();
+        ExposureTime_Text->raise();
+        KSJ_EXPOSURE_LINES->raise();
+        KSJ_EXPOSURE_LINES_Text->raise();
         menuBar = new QMenuBar(Visual_feedback_systemClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1093, 26));
@@ -165,6 +248,8 @@ public:
         QObject::connect(StartBtn, SIGNAL(clicked()), Visual_feedback_systemClass, SLOT(on_StartBtn_Clicked()));
         QObject::connect(StopBtn, SIGNAL(clicked()), Visual_feedback_systemClass, SLOT(on_StopBtn_Clicked()));
         QObject::connect(TimeReset, SIGNAL(clicked()), Visual_feedback_systemClass, SLOT(on_TimeRestBtn_Clicked()));
+        QObject::connect(initTracker, SIGNAL(clicked()), Visual_feedback_systemClass, SLOT(on_initTrackerBtn_Clicked()));
+        QObject::connect(preView, SIGNAL(clicked()), Visual_feedback_systemClass, SLOT(on_preViewBtn_Clicked()));
 
         QMetaObject::connectSlotsByName(Visual_feedback_systemClass);
     } // setupUi
@@ -178,15 +263,23 @@ public:
         colsize->setText(QApplication::translate("Visual_feedback_systemClass", "col size", Q_NULLPTR));
         rolstart->setText(QApplication::translate("Visual_feedback_systemClass", "row start", Q_NULLPTR));
         rowsize->setText(QApplication::translate("Visual_feedback_systemClass", "row size", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Visual_feedback_systemClass", "tracking", Q_NULLPTR));
-        setcapture->setText(QApplication::translate("Visual_feedback_systemClass", "set capture field", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("Visual_feedback_systemClass", "Tracking", Q_NULLPTR));
+        setcapture->setText(QApplication::translate("Visual_feedback_systemClass", "InitCamera", Q_NULLPTR));
         cameraCount->setText(QApplication::translate("Visual_feedback_systemClass", "\346\243\200\346\265\213\345\207\272\347\232\204\347\233\270\346\234\272\346\225\260\357\274\232", Q_NULLPTR));
         cameraSerial->setText(QApplication::translate("Visual_feedback_systemClass", "\351\200\211\346\213\251\347\233\270\346\234\272\345\272\217\345\217\267:", Q_NULLPTR));
-        ImgViewLabel->setText(QApplication::translate("Visual_feedback_systemClass", "TextLabel", Q_NULLPTR));
         StartBtn->setText(QApplication::translate("Visual_feedback_systemClass", "StartBtn", Q_NULLPTR));
         StopBtn->setText(QApplication::translate("Visual_feedback_systemClass", "StopBtn", Q_NULLPTR));
         label->setText(QApplication::translate("Visual_feedback_systemClass", "timeCounts", Q_NULLPTR));
         TimeReset->setText(QApplication::translate("Visual_feedback_systemClass", "TimeReset", Q_NULLPTR));
+        initTracker->setText(QApplication::translate("Visual_feedback_systemClass", "initTracker", Q_NULLPTR));
+        manipulator_label->setText(QApplication::translate("Visual_feedback_systemClass", "manipulator info", Q_NULLPTR));
+        preView->setText(QApplication::translate("Visual_feedback_systemClass", "preView", Q_NULLPTR));
+        StopPreView->setText(QApplication::translate("Visual_feedback_systemClass", "StopPreView", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("Visual_feedback_systemClass", "camera operatror", Q_NULLPTR));
+        ImgViewLabel->setText(QApplication::translate("Visual_feedback_systemClass", "ImgViewLabel", Q_NULLPTR));
+        groupBox_2->setTitle(QApplication::translate("Visual_feedback_systemClass", "TrackingSystem", Q_NULLPTR));
+        ExposureTime->setText(QApplication::translate("Visual_feedback_systemClass", "ExposureTime", Q_NULLPTR));
+        KSJ_EXPOSURE_LINES->setText(QApplication::translate("Visual_feedback_systemClass", "KSJ_EXPOSURE_LINES", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -36,6 +36,12 @@
     <ClCompile Include="Visual_feedback_system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KCF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Visual_feedback_system.h">
@@ -51,5 +57,13 @@
     <QtRcc Include="Visual_feedback_system.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KCF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

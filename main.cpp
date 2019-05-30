@@ -1,6 +1,6 @@
 #include "Visual_feedback_system.h"
 #include <QtWidgets/QApplication>
-#include <tchar.h>
+#include <iostream>
 #include <stdint.h>
 #include <opencv2/opencv.hpp>//opencv api
 extern "C"
